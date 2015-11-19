@@ -1,0 +1,13 @@
+<template name="AddBook">
+  <div class="add-book container">
+    <h1 class="viewHeader h3"><i class="fa fa-plus-circle"></i> AddBook</h1>
+    <hr>
+    <div class="col-md-10">
+    	{{> bookEntry}}
+    </div>
+  </div>
+</template>
+
+<template name="bookEntry">
+	{{> quickForm collection="Books" id="addBookForm" omitFields="category, wordCount, keywords, excerpt, devStatus, pubStatus, pubType, createdAt, updatedAt, createdBy" type="insert" buttonContent="Add Book"}}
+</template>

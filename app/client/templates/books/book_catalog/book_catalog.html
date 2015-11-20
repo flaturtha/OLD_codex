@@ -1,58 +1,24 @@
 <template name="BookCatalog">
-  <h1>Book Catalog</h1>
-  <table class="table table-hover table-bordered">
-    <thead>
-      <tr>
-        <th>Edit <i class="fa fa-level-down"></i></th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Series</th>
-        <th>Orig Pub</th>
-        <th>Orig Pub Date</th>
-        <th>Subgenre</th>
-        <th>Word Count</th>
-        <th>Illustrations</th>
-        <th>Dev Status</th>
-        <th>Pub Status</th>
-      </tr>
-    </thead>
-    <tbody>
-    {{#each books}}
-      <tr>
-        <td>{{#linkTo route='bookDetail'}}<i style="color:#808080;" class="fa fa-eye-slash centeri" aria-hidden="true"></i>{{/linkTo}}</td>
-        <td>{{title}}</td>
-        <td>{{author}}</td>
-        <td>{{series}}</td>
-        <td>{{o_pub}}</td>
-        <td>{{formatdate o_pubDate}}</td>
-        <td>{{subgenre}}</td>
-        <td>{{ordCount}}</td>
-        <td>{{illustrations}}</td>
-        <td>{{devStatus}}</td>
-        <td>{{pubStatus}}</td>
-      </tr>
-    {{/each}}
-    </tbody>
-  </table>
-</template>
-
-<!-- <template name="bookCatalog">
-  <div class="book-catalog">
+  <div class="book-catalog container">
     <h1 class="viewHeader h3"><i class="fa fa-book"></i> BookCatalog</h1>
     <hr>
-    {{> bookCatTable}}
+    <div class="col-md-12">
+      {{> reactiveTable collection=booksCollection settings=tableSettings}}
+    </div>
   </div>
 </template>
 
-<template name="bookCatTable">
-  <section class="bookCatTable">
-    {{> tabular table=TabularTables.Books selector=selector class="table table-striped table-bordered table-hover table-condensed table-responsive"}}
-  </section>  
+<template name="bookDetailClicker">
+  {{#linkTo route='bookDetail'}}<i style="color:#808080;" class="fa fa-eye-slash centeri" aria-hidden="true"></i>{{/linkTo}}
 </template>
 
-<template name="bookViewCell">
-{{#linkTo route='bookDetail'}}<i style="color:#808080;" class="fa fa-eye-slash centeri" aria-hidden="true"></i>{{/linkTo}}
-  {{#linkTo route='bookView'}}
-    
-  {{/linkTo}}
+<!-- <template name="illustrationType">
+  {{> reactiveTable settings:settings}}
 </template> -->
+
+<!-- <template name="illustrationType">
+  {{> reactiveTable collection=illustrationsSub settings=settings}}
+</template> -->
+
+<!--         {key: 'illustrations.full', label: 'Full', headerClass:'tableHeader'},
+        {key: 'illustrations.spot', label: 'Spot', headerClass:'tableHeader'}, -->

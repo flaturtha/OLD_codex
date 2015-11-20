@@ -1,5 +1,17 @@
 Books = new Mongo.Collection('books');
 
+iType = new SimpleSchema({
+  full: {
+    type: Number,
+    label: "Full"
+  },
+  spot: {
+    type: Number,
+    label: "Spot",
+    defaultValue: 0
+  }
+});
+
 Books.attachSchema(new SimpleSchema({
   title: {
     type: String,
@@ -26,13 +38,13 @@ Books.attachSchema(new SimpleSchema({
     optional: true
   },
   o_pubDate: {
-    type: Date,
+    type: String,
     label: "Original Publication Date",
     optional: true
   },
   subgenre: {
     type: String,
-    label: "Sub-Genre",
+    label: "Subgenre",
     optional: true
   },
   category: {
@@ -46,7 +58,7 @@ Books.attachSchema(new SimpleSchema({
     optional: true
   },
   illustrations: {
-    type: String,
+    type: iType,
     label: "Illustrations",
     optional: true
   },
@@ -64,12 +76,14 @@ Books.attachSchema(new SimpleSchema({
   devStatus: {
     type: String,
     label: "Dev Status",
+    defaultValue: "raw",
     optional: true
   },
   pubStatus: {
     type: String,
     label: "Publication Status",
-    optional: true
+    optional: true,
+    defaultValue: "none"
   },
   pubType: {
     type: String,

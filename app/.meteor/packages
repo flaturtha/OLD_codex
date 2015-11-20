@@ -23,3 +23,8 @@ twbs:bootstrap
 natestrauser:font-awesome
 momentjs:moment
 aldeed:tabular
+accounts-password
+accounts-ui
+useraccounts:bootstrap
+aslagle:reactive-table
+fortawesome:fontawesome

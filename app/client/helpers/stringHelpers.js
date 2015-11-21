@@ -27,3 +27,12 @@ Template.registerHelper('formatdatetime', function(datetime){
     return datetime;
   }
 });
+Template.registerHelper('duedate', function(datetime){
+  if (moment && datetime) {
+    return moment(datetime).add(10, 'd').format("DD MMM YYYY");
+    // var nextWeek = moment().add(7,'days');
+  }
+  else {
+    return datetime;
+  }
+});

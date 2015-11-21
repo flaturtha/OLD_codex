@@ -5,20 +5,13 @@
     <div class="col-md-12">
       {{> reactiveTable collection=booksCollection settings=tableSettings}}
     </div>
+    <hr>
+<!--     <div class="col-md-12">
+    	{{> reactiveTableFilter id="filter1" label="Illustrations Filter" settings=filter1settings}}
+    </div> -->
   </div>
 </template>
 
 <template name="bookDetailClicker">
   {{#linkTo route='bookDetail'}}<i style="color:#808080;" class="fa fa-eye-slash centeri" aria-hidden="true"></i>{{/linkTo}}
 </template>
-
-<!-- <template name="illustrationType">
-  {{> reactiveTable settings:settings}}
-</template> -->
-
-<!-- <template name="illustrationType">
-  {{> reactiveTable collection=illustrationsSub settings=settings}}
-</template> -->
-
-<!--         {key: 'illustrations.full', label: 'Full', headerClass:'tableHeader'},
-        {key: 'illustrations.spot', label: 'Spot', headerClass:'tableHeader'}, -->

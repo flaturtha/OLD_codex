@@ -36,6 +36,11 @@ Template.BookCatalog.helpers({
 				{key: 'pubStatus', label: 'Pub Status', headerClass:'tableHeader'},
 			]
 		};
+	},
+	filter1settings: function(){
+		return {
+			fields: [illustrations.full, illustrations.spot]
+		};
 	}
 });
 

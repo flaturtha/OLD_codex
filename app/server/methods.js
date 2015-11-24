@@ -21,11 +21,12 @@ Meteor.methods({
   'updatecategory':function(id, category){
   	return Books.update({_id: id}, {$set: {category: category, upsert: true}});
   },
-  
  	'updateillustrations':function(id, illustrations){
- 		return Books.update({_id: id, illustrations.full: illustrations.full}, {$set: {"illustrations.$": illustrations.full, upsert: true}});
+ 		return Books.update({_id: id}, {$set: {"illustrations.full": illustrations, upsert: true}});
  	},
-
+ 	'updateillustrations':function(id, illustrations){
+ 		return Books.update({_id: id}, {$set: {"illustrations.spot": illustrations, upsert: true}});
+ 	}, 	
   'updatekeywords':function(id, keywords){
   	return Books.update({_id: id}, {$set: {keywords: keywords, upsert: true}});
   },

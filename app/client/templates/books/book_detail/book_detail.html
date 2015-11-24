@@ -3,11 +3,109 @@
 		<h1 class="viewHeader h3"><i class="fa fa-eye-slash"></i> Book Detail | <span class="headerTitle">{{title}}</span> </h1>
 		<hr>
 		{{> bvHead}}
-		{{> meta}}
+		<br>
+		{{> metadata}}
+		<br>
+		<hr>
 		<!-- {{>status}} -->
 
 	</div>
 </template>
+
+
+<template name="metadata">
+	<dl class="dl-horizontal">
+
+		<dt>Original Pub</dt>
+		<dd class="editing_Input editing_opub">
+			{{#if editingInput}}
+				<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
+			{{else}}
+				{{o_pub}}
+			{{/if}}
+		</dd>
+
+		<dt>Original Pub Date</dt>
+		<dd class="editing_Input editing_opubdate">
+			{{#if editingInput}}
+				<input type="text" class="input_opubdate o_pubdate" id="o_pubDate" placeholder="{{o_pubDate}}" value="{{o_pubDate}}">
+			{{else}}
+				{{o_pubDate}}
+			{{/if}}
+		</dd>
+
+		<dt>Subgenre</dt>
+		<dd class="editing_Input editing_subgenre">
+			{{#if editingInput}}
+				<input type="text" class="input_subgenre subgenre" id="subgenre" placeholder="{{subgenre}}" value="{{subgenre}}">
+			{{else}}
+				{{subgenre}}
+			{{/if}}
+		</dd>
+
+		<dt>Word Count</dt>
+		<dd class="editing_Input editing_wordCount">
+			{{#if editingInput}}
+				<input type="text" class="input_wordCount wordCount" id="wordCount" placeholder="{{wordCount}}" value="{{wordCount}}">
+			{{else}}
+				{{wordCount}}
+			{{/if}}
+		</dd>
+
+		<dt>Category</dt>
+		<dd class="editing_Input editing_category">
+			{{#if editingInput}}
+				<input type="text" class="input_category category" id="category" placeholder="{{category}}" value="{{category}}">
+			{{else}}
+				{{category}}
+			{{/if}}
+		</dd>
+
+		<dt>Illustrations</dt>
+		<dd class="editing_Input editing_illustrations">
+			{{#if editingInput}}
+				<input type="text" class="input_illustrations illustrations" id="illustrations" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
+			{{else}}
+				{{illustrations.full}}
+			{{/if}}
+		</dd>
+
+
+		<dt>Keywords</dt>
+		<dd class="editing_Input editing_keywords">
+			{{#if editingInput}}
+				<input type="text" class="input_keywords keywords" id="keywords" placeholder="{{keywords}}" value="{{keywords}}">
+			{{else}}
+				{{keywords}}
+			{{/if}}
+		</dd>
+
+		<dt>Excerpt</dt>
+		<dd class="editing_Input editing_excerpt">
+			{{#if editingInput}}
+				<input type="textarea" class="input_excerpt excerpt" id="excerpt" placeholder="{{excerpt}}" value="{{excerpt}}">
+			{{else}}
+				{{excerpt}}
+			{{/if}}
+		</dd>
+
+	</dl>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <template name="bvHead">
 	<div class="row bookviewtitle">
@@ -30,7 +128,7 @@
 </template>
 
 <template name="meta">
-	<div class="row meta">
+	<div class="row">
 		<div class="col-md-8">
 			<div class="panel panel-default">
 				<div class="panel-body">

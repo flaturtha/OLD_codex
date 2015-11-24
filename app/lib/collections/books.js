@@ -1,6 +1,6 @@
 Books = new Mongo.Collection('books');
 
-iType = new SimpleSchema({
+itype = new SimpleSchema({
   full: {
     type: Number,
     label: "Full"
@@ -58,7 +58,7 @@ Books.attachSchema(new SimpleSchema({
     optional: true
   },
   illustrations: {
-    type: iType,
+    type: itype,
     label: "Illustrations",
     optional: true
   },

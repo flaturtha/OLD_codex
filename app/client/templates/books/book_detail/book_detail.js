@@ -4,27 +4,103 @@
 Template.BookDetail.events({
 });
 
-Template.meta.editingInput = function(){
-	return Session.get('editingInput');
-}
-
-Template.meta.events({
-	'dblclick .def_item':function(evt,tmpl){
+Template.metadata.events({
+	'dblclick .editing_Input':function(evt,tmpl){
 		Session.set('editingInput',true);
 	},
-	'keyup .def_text': function(evt,tmpl){
-		if(evt.which === 13 || evt.which === 27) {
-			var def_text = tmpl.find('.def_text').value;
-			Books.update(this._id,{$set:{def_text:def_text, def_item:Session.get('def_item')}});
-			Session.set('editingInput', false);
+	// 'blur .editing_opub': function(evt,tmpl){
+	// 	var ele = tmpl.find('.o_pub');
+	// 	Meteor.call('updateOPub', this._id,ele.value);
+	// 	Session.set('editingInput',false);
+	// },
+	'keyup .input_opub': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.o_pub');
+			Meteor.call('updateOPub', this._id,ele.value);
+			Session.set('editingInput',false);
 		}
-	}
+	},
+
+	// 'blur .editing_opubdate': function(evt,tmpl){
+	// 	var ele = tmpl.find('.o_pubdate');
+	// 	Meteor.call('updateOPubDate', this._id,ele.value);
+	// 	Session.set('editingInput',false);
+	// },
+	'keyup .input_opubdate': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.o_pubdate');
+			Meteor.call('updateOPubDate', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_subgenre': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.subgenre');
+			Meteor.call('updatesubgenre', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_wordCount': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_wordCount');
+			Meteor.call('updatewordcount', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_category': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_category');
+			Meteor.call('updatecategory', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_illustrations': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_illustrations');
+			Meteor.call('updateillustrations', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_keywords': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_keywords');
+			Meteor.call('updatekeywords', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_excerpt': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_excerpt');
+			Meteor.call('updateexcerpt', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
 });
 
 /*****************************************************************************/
 /* BookDetail: Helpers */
 /*****************************************************************************/
 Template.BookDetail.helpers({
+});
+
+Template.metadata.helpers({
+	editingInput:function(){
+		return Session.get('editingInput');
+	}
 });
 
 /*****************************************************************************/

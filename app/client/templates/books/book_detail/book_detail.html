@@ -62,12 +62,26 @@
 		</dd>
 
 		<dt>Illustrations</dt>
-		<dd class="editing_Input editing_illustrations">
-			{{#if editingInput}}
-				<input type="text" class="input_illustrations illustrations" id="illustrations" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
-			{{else}}
-				{{illustrations.full}}
-			{{/if}}
+		<dd>
+			<dl>
+				<dt>Full</dt>
+				<dd class="editing_Input editing_illustrations-full">
+					{{#if editingInput}}
+						<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
+					{{else}}
+						{{illustrations.full}}
+					{{/if}}
+				</dd>
+
+				<dt>Spot</dt>
+				<dd class="editing_Input editing_illustrations-spot">
+					{{#if editingInput}}
+						<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+					{{else}}
+						{{illustrations.spot}}
+					{{/if}}
+				</dd>
+			</dl>
 		</dd>
 
 

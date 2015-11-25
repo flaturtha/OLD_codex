@@ -63,11 +63,29 @@ Template.metadata.events({
 		}
 	},
 
-	'keyup .input_illustrations': function(evt,tmpl){
+	// 'keyup .input_illustrations': function(evt,tmpl){
+	// 	if (evt.which === 27 || evt.which === 13){
+	// 		evt.preventDefault();
+	// 		var ele = tmpl.find('.input_illustrations');
+	// 		Meteor.call('updateillustrations', this._id,ele.value);
+	// 		Session.set('editingInput',false);
+	// 	}
+	// },
+
+	'keyup .input_illustrations-full': function(evt,tmpl){
 		if (evt.which === 27 || evt.which === 13){
 			evt.preventDefault();
-			var ele = tmpl.find('.input_illustrations');
-			Meteor.call('updateillustrations', this._id,ele.value);
+			var ele = tmpl.find('.input_illustrations-full');
+			Meteor.call('updateillustrations-full', this._id,ele.value);
+			Session.set('editingInput',false);
+		}
+	},
+
+	'keyup .input_illustrations-spot': function(evt,tmpl){
+		if (evt.which === 27 || evt.which === 13){
+			evt.preventDefault();
+			var ele = tmpl.find('.input_illustrations-spot');
+			Meteor.call('updateillustrations-spot', this._id,ele.value);
 			Session.set('editingInput',false);
 		}
 	},

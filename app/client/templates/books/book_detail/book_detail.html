@@ -1,131 +1,147 @@
 <template name="BookDetail">
 	<div class="book-detail container">
-		<h1 class="viewHeader h3"><i class="fa fa-eye-slash"></i> Book Detail | <span class="headerTitle">{{title}}</span> </h1>
-		<hr>
-		{{> bvHead}}
-		<br>
-		{{> metadata}}
-		<br>
-		<hr>
-		<!-- {{>status}} -->
+		<h1 class="page-header viewHeader h3"><i class="fa fa-eye-slash"></i> Book Detail | <span class="headerTitle {{pdStatus}}">{{title}}</span> </h1>
+
+		<div class="col-md-offset-1">
+			<div class="row">
+				{{> bvHead}}
+			</div>
+			<hr>
+			<div class="row">
+				{{> metadata}}
+			</div>
+			<br>
+			<hr class="divider">
+			<div class="row">
+				{{> DevStatus}}
+			</div>
+
+		</div>
 
 	</div>
 </template>
 
 
 <template name="metadata">
-	<dl class="dl-horizontal">
+	
+	<div class="col-md-10">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-info-circle"></i> Basic Meta</h3>
+		  </div>
+		  <div class="panel-body">
+				<dl class="dl-horizontal">
 
-		<dt>Original Pub</dt>
-		<dd class="editing_Input editing_opub">
-			{{#if editingInput}}
-				<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
-			{{else}}
-				{{o_pub}}
-			{{/if}}
-		</dd>
+					<dt>Original Pub</dt>
+					<dd class="editing_Input editing_opub">
+						{{#if editingInput}}
+							<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
+						{{else}}
+							{{o_pub}}
+						{{/if}}
+					</dd>
 
-		<dt>Original Pub Date</dt>
-		<dd class="editing_Input editing_opubdate">
-			{{#if editingInput}}
-				<input type="text" class="input_opubdate o_pubdate" id="o_pubDate" placeholder="{{o_pubDate}}" value="{{o_pubDate}}">
-			{{else}}
-				{{o_pubDate}}
-			{{/if}}
-		</dd>
+					<dt>Original Pub Date</dt>
+					<dd class="editing_Input editing_opubdate">
+						{{#if editingInput}}
+							<input type="text" class="input_opubdate o_pubdate" id="o_pubDate" placeholder="{{o_pubDate}}" value="{{o_pubDate}}">
+						{{else}}
+							{{o_pubDate}}
+						{{/if}}
+					</dd>
 
-		<dt>Subgenre</dt>
-		<dd class="editing_Input editing_subgenre">
-			{{#if editingInput}}
-				<input type="text" class="input_subgenre subgenre" id="subgenre" placeholder="{{subgenre}}" value="{{subgenre}}">
-			{{else}}
-				{{subgenre}}
-			{{/if}}
-		</dd>
+					<dt>Subgenre</dt>
+					<dd class="editing_Input editing_subgenre">
+						{{#if editingInput}}
+							<input type="text" class="input_subgenre subgenre" id="subgenre" placeholder="{{subgenre}}" value="{{subgenre}}">
+						{{else}}
+							{{subgenre}}
+						{{/if}}
+					</dd>
 
-		<dt>Word Count</dt>
-		<dd class="editing_Input editing_wordCount">
-			{{#if editingInput}}
-				<input type="text" class="input_wordCount wordCount" id="wordCount" placeholder="{{wordCount}}" value="{{wordCount}}">
-			{{else}}
-				{{wordCount}}
-			{{/if}}
-		</dd>
+					<dt>Word Count</dt>
+					<dd class="editing_Input editing_wordCount">
+						{{#if editingInput}}
+							<input type="text" class="input_wordCount wordCount" id="wordCount" placeholder="{{wordCount}}" value="{{wordCount}}">
+						{{else}}
+							{{wordCount}}
+						{{/if}}
+					</dd>
 
-		<dt>Category</dt>
-		<dd class="editing_Input editing_category">
-			{{#if editingInput}}
-				<input type="text" class="input_category category" id="category" placeholder="{{category}}" value="{{category}}">
-			{{else}}
-				{{category}}
-			{{/if}}
-		</dd>
+					<dt>Category</dt>
+					<dd class="editing_Input editing_category">
+						{{#if editingInput}}
+							<input type="text" class="input_category category" id="category" placeholder="{{category}}" value="{{category}}">
+						{{else}}
+							{{category}}
+						{{/if}}
+					</dd>
+					<br>
+					<dt>Illustrations:</dt>
+					<dd>&nbsp;
+						<dl>
+							<dt>Full</dt>
+							<dd class="editing_Input editing_illustrations-full">
+								{{#if editingInput}}
+									<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
+								{{else}}
+									{{illustrations.full}}
+								{{/if}}
+							</dd>
 
-		<dt>Illustrations</dt>
-		<dd>
-			<dl>
-				<dt>Full</dt>
-				<dd class="editing_Input editing_illustrations-full">
-					{{#if editingInput}}
-						<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
-					{{else}}
-						{{illustrations.full}}
-					{{/if}}
-				</dd>
+							<dt>Spot</dt>
+							<dd class="editing_Input editing_illustrations-spot">
+								{{#if editingInput}}
+									<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+								{{else}}
+									{{illustrations.spot}}
+								{{/if}}
+							</dd>
+						
+							<dt>Caption</dt>
+							<dd class="editing_Input editing_caption">
+							{{#if editingInput}}
+								<input type="textarea" class="input_caption caption" id="caption" placeholder="{{illustrations.caption}}" value="{{illustrations.caption}}">
+							{{else}}
+								{{illustrations.caption}}
+							{{/if}}
+							</dd>
+						</dl>
+					</dd>
 
-				<dt>Spot</dt>
-				<dd class="editing_Input editing_illustrations-spot">
-					{{#if editingInput}}
-						<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
-					{{else}}
-						{{illustrations.spot}}
-					{{/if}}
-				</dd>
-			</dl>
-		</dd>
+					<dt>Keywords</dt>
+					<dd class="editing_Input editing_keywords">
+						{{#if editingInput}}
+							<input type="text" class="input_keywords keywords" id="keywords" placeholder="{{keywords}}" value="{{keywords}}">
+						{{else}}
+							{{keywords}}
+						{{/if}}
+					</dd>
 
+					<dt>Excerpt</dt>
+					<dd class="editing_Input editing_excerpt">
+						{{#if editingInput}}
+							<input type="textarea" class="input_excerpt excerpt" id="excerpt" placeholder="{{excerpt}}" value="{{excerpt}}">
+						{{else}}
+							{{excerpt}}
+						{{/if}}
+					</dd>
 
-		<dt>Keywords</dt>
-		<dd class="editing_Input editing_keywords">
-			{{#if editingInput}}
-				<input type="text" class="input_keywords keywords" id="keywords" placeholder="{{keywords}}" value="{{keywords}}">
-			{{else}}
-				{{keywords}}
-			{{/if}}
-		</dd>
+					<dt>PD Status</dt>
+					<dd>{{pdStatus}}</dd>
 
-		<dt>Excerpt</dt>
-		<dd class="editing_Input editing_excerpt">
-			{{#if editingInput}}
-				<input type="textarea" class="input_excerpt excerpt" id="excerpt" placeholder="{{excerpt}}" value="{{excerpt}}">
-			{{else}}
-				{{excerpt}}
-			{{/if}}
-		</dd>
+				</dl>
+		  </div>
+		</div>
+	</div>
 
-	</dl>
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <template name="bvHead">
 	<div class="row bookviewtitle">
 		<div class="col-md-6">
-			<h3 class="title">{{title}}</h3>
-			<h4><span class="text-muted">by</span> <span class="author">{{author}}</span></h4>
+			<!-- <h3 class="title" style="margin-top:0;">{{title}}</h3> -->
+			<h4 style="margin-top:0;"><span class="text-muted">by</span> <span class="author">{{author}}</span></h4>
 			<p class="cfn">Casefile Number: {{_id}}</p>
 		</div> <!-- end div col-md-6 -->
 		<div class="col-md-6 text-muted bd_dates">
@@ -138,72 +154,6 @@
 				<dd>{{formatdate updatedAt}}</dd>
 			</dl>
 		</div> <!-- end div col-md-6 -->
-	</div>
+	</div> <!-- end div .row .bookviewtitle -->
 </template>
 
-<template name="meta">
-	<div class="row">
-		<div class="col-md-8">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<dl class="dl-horizontal">
-						<dt>Original Publication</dt>
-						<dd class="def_item">
-							{{#if editingInput}}
-								<input class="def_text o_pub" placeholder="&nbsp;{{o_pub}}" type="text" name="o_pub" id="o_pub" size="60;">
-							{{else}}
-								{{o_pub}}
-							{{/if}}
-						</dd>
-
-						<dt>Original Pub Date</dt>
-						<dd style="width:200px;"><input class="o_pubDate" placeholder="&nbsp;[DD MMM YYYY]" type="text" name="o_pubDate" id="o_pubDate" size="30;">{{o_pubdate}}</dd>
-
-						<dt>SubGenre</dt>
-						<dd><input class="subgenre" placeholder="&nbsp;[sub-genre]" type="text" name="subgenre" id="subgenre" size="60;">{{subgenre}}</dd>
-
-						<dt>Category</dt>
-						<dd><input class="cluster" placeholder="&nbsp;[rainy afternoon ... ]" type="text" name="cluster" id="cluster" size="60;">{{category}}</dd>
-
-						<dt>Word Count</dt>
-						<dd><input class="wordCount" placeholder="&nbsp;[word count]" type="number" name="wordCount" id="wordCount" size="60;">{{wordCount}}</dd>
-
-						<dt>Illustrations</dt>
-						<dd>
-							<!-- {{#each illustration}} -->
-								<!-- <dt>Full:</dt>
-								<dd>{{full}}</dd>
-
-								<dt>Spot:</dt>
-								<dd>{{spot}}</dd> -->
-
-								<p>Full: <input class="iFull" placeholder="&nbsp;[# of Full illustrations]" type="number" name="iFull" id="iFull" size="60;">{{full}}</p>
-								<p>Spot: <input class="iSpot" placeholder="&nbsp;[# of Spot illustrations]" type="number" name="iSpot" id="iSpot" size="60;">{{spot}}</p>
-
-								<!-- {{/each}} -->
-
-
-							<!-- <label for="illustrationFullInput">Full</label>
-							<input class="illustrationFull" placeholder="&nbsp;# [full]" type="text" name="illustrationFull" id="illustrationFullInput" size="10;">{{full}}
-							
-							<label for="illustrationSpotInput">Spot</label>
-							<input class="illustrationSpot" placeholder="&nbsp;# [spot]" type="text" name="illustrationSpot" id="illustrationSpotInput" size="10;">{{illustrationType.spot}} -->
-						</dd>
-
-						<dt>Keywords</dt>
-						<dd><input class="keywords" placeholder="&nbsp;[keywords list]" type="text" name="keywords" id="keywords" size="60;">{{keywords}}</dd>
-
-						<dt>Excerpt</dt>
-						<dd><textarea class="excerpt" placeholder="&nbsp;[100 word excerpt]" type="textarea" name="excerpt" id="excerpt" cols="59" rows="4">{{excerpt}}</textarea></dd>
-
-
-
-					</dl>
-				</div>
-			</div>
-		</div> <!-- end div col-md-9 -->
-		<div class="col-md-4">
-			<img src="{{pathFor img}}" alt="{{name}}">
-		</div>
-	</div>
-</template>

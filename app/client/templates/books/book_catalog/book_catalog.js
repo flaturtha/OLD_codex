@@ -7,6 +7,30 @@ Template.BookCatalog.events({
 /*****************************************************************************/
 /* BookCatalog: Helpers */
 /*****************************************************************************/
+// SOME SUCH VARIATION ON THE CHECKORX FUNCTION TO COLOR PD VS COPYRIGHT
+// var checkOrX = function (value) {
+//     var html;
+//     // first, normalize the value to a canonical interpretation
+//     if (typeof value === 'boolean')
+//       value = {
+//         support: value
+//       };
+
+//     if (value === null || value === undefined) {
+//       html = '<span style="color: orange; font-weight: bold">?</span>';
+//     } else {
+//       if (value.support === true)
+//         html = '<span style="color: green">&#10004;</span>'
+//       else if (value.support === false)
+//         html = '<span style="color: red">&#10008;</span>';
+//       else
+//         html = '<span style="color: lightblue">' + value.support + '</span>';
+//       if (value.link)
+//         html += ' (<a href="' + value.link + '">more</a>)';
+//       }
+//     return new Spacebars.SafeString(html);
+//   };
+
 Template.BookCatalog.helpers({
 	books: function(){
 		return Books.find();
@@ -32,8 +56,9 @@ Template.BookCatalog.helpers({
         {key: 'illustrations.spot', label: 'Illus: Spot', headerClass:'tableHeader', cellClass: 'cellCentered'},
 				{key: 'o_pub', label: 'Original Pub', headerClass:'tableHeader'},
 				{key: 'o_pubDate', label: 'Orig Pub Date', headerClass:'tableHeader'},
-				{key: 'devStatus', label: 'Dev Status', headerClass:'tableHeader'},
-				{key: 'pubStatus', label: 'Pub Status', headerClass:'tableHeader'},
+				{key: 'pdStatus', label: 'PD Status', headerClass:'tableHeader'/*, fn: checkOrX*/},
+				{key: 'devStatus', label: 'Dev Status', headerClass:'tableHeader'}
+				// {key: 'pubStatus', label: 'Pub Status', headerClass:'tableHeader'},
 			]
 		};
 	},

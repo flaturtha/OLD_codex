@@ -9,8 +9,11 @@
 	margin-bottom: 15px;
 }
 
-.headerTitle {
+.page-header {
 	color: #999;
+}
+
+.headerTitle {
 	text-transform: uppercase;
 	font-size: 15px;
 	letter-spacing: 2px;
@@ -20,3 +23,55 @@
 	text-transform: uppercase;
 	font-size: 10px;
 }
+
+.pds {
+	margin-bottom: 3px;
+}
+
+.Copyrighted::after {
+	content: "\f00d  COPYRIGHTED";
+	font-family: FontAwesome;
+	color: white;
+	background-color: red;
+	padding: 4px;
+	border-radius: 3px;
+	margin-left: 25px;
+}
+
+.Public::after {
+	content: "\f046  PUBLIC DOMAIN ";
+	font-family: FontAwesome;
+	color: #fff;
+	background-color: green;
+	padding: 4px;
+	border-radius: 3px;
+	margin-left: 25px;
+}
+
+dt {
+	text-transform: uppercase;
+	color: #999;
+}
+
+dd {
+	color: #000;
+}
+
+dd > dl {
+	margin-left: -175px;
+}
+
+dd > dl > dd {
+	text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+

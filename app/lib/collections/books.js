@@ -1,6 +1,6 @@
 Books = new Mongo.Collection('books');
 
-itype = new SimpleSchema({
+illustration = new SimpleSchema({
   full: {
     type: Number,
     label: "Full"
@@ -9,6 +9,11 @@ itype = new SimpleSchema({
     type: Number,
     label: "Spot",
     defaultValue: 0
+  },
+  caption: {
+    type: String,
+    label: "Caption",
+    optional: true
   }
 });
 
@@ -58,7 +63,7 @@ Books.attachSchema(new SimpleSchema({
     optional: true
   },
   illustrations: {
-    type: itype,
+    type: illustration,
     label: "Illustrations",
     optional: true
   },
@@ -73,8 +78,19 @@ Books.attachSchema(new SimpleSchema({
     // min: 125,
     optional: true
   },
-  devStatus: {
+  pdStatus: {
     type: String,
+    label: "Public Domain Status",
+    autoform: {
+      type: "select-radio-inline",
+      options: [
+        {label: "Copyrighted", value: "Copyrighted"},
+        {label: "Public Domain", value: "Public Domain"}
+      ]
+    }
+  },
+  devStatus: {
+    type: String, /* tie this to devStatus collection*/
     label: "Dev Status",
     defaultValue: "raw",
     optional: true

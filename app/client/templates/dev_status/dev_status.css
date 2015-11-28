@@ -1,0 +1,28 @@
+/*****************************************************************************/
+/* DevStatus: Style */
+/*****************************************************************************/
+.dev-status {
+}
+
+.headerStatus {
+	font-size: 15px;
+	color: #999;
+}
+
+.disabled {
+	cursor: not-allowed;
+	background-color: #eee;
+	color: #9e9999;
+}
+
+.statuspanel {
+	margin-left: 15px;
+	min-width: 300px;
+}
+
+legend {
+	background-color: #999;
+	padding: 10px 10px 10px 25px;
+	border-radius: 5px;
+	color: #fff;
+}

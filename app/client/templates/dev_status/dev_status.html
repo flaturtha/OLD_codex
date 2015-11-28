@@ -1,0 +1,72 @@
+<template name="DevStatus">
+  <div class="dev-status">
+  	<div class="panel panel-default">
+  		  <div class="panel-heading">
+  				<h3 class="panel-title"><i class="fa fa-cogs"></i> Development Status</h3>
+					<h6>Current Status: <span class="text-info">[ <span class="ital">Basic Meta{{currentStatus}}</span> ]</span></h6>
+  		  </div>
+  		  <div class="panel-body">
+  				{{> checklists}}
+  		  </div>
+  	</div>
+  </div> <!-- end div dev-status -->
+</template>
+
+
+<template name="checklists">
+	<div class="row">
+  <div class="col-md-11">
+		{{> rawStatus}}
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+</template>
+
+<template name="rawStatus">
+	{{#autoForm collection="DevStatus" id="updateStatus" type="insert"}}
+	<div class="row">
+		<div class="panel panel-default col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-file-o"></i> Raw</legend>
+				{{> afFieldInput type="select-checkbox" name="raw" options="allowed" label=true}}
+			</fieldset>
+		</div>
+
+		<div class="panel panel-default col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-pencil"></i> Edit</legend>
+				{{> afFieldInput type="select-checkbox" name="edit" options="allowed" label=true}}
+			</fieldset>
+		</div>
+
+		<div class="panel panel-default col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-picture-o"></i> Layout</legend>
+				{{> afFieldInput type="select-checkbox" name="layout" options="allowed" label=true}}
+			</fieldset>
+		</div>
+	</div> <!-- end div .row -->
+
+	<div class="row">
+		<div class="panel panel-default pull-left col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-external-link"></i> Output</legend>
+				{{> afFieldInput type="select-checkbox" name="output" options="allowed" label=true}}
+			</fieldset>
+		</div>
+
+		<div class="panel panel-default pull-left col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-paper-plane-o"></i> Flightcheck</legend>
+				{{> afFieldInput type="select-checkbox" name="flightcheck" options="allowed" label=true}}
+			</fieldset>
+		</div>
+
+		<div class="panel panel-default pull-left col-md-3 statuspanel" style="padding:10px;">
+			<fieldset>
+				<legend class=""><i class="fa fa-book"></i> Publication</legend>
+				{{> afFieldInput type="select-checkbox" name="publication" options="allowed" label=true}}
+			</fieldset>
+		</div>
+	</div> <!-- end div .row -->
+	{{/autoForm}}
+</template>

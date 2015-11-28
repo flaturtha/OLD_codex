@@ -11,3 +11,62 @@
 <template name="bookEntry">
 	{{> quickForm collection="Books" id="addBookForm" omitFields="category, wordCount, keywords, excerpt, devStatus, pubStatus, pubType, createdAt, updatedAt, createdBy" type="insert" buttonContent="Add Book"}}
 </template>
+
+
+<template name="bookEntry2">
+	{{#autoForm collection="Books" id="addBookForm" type="insert"}}
+		<div class="form-group title">
+			<label for="title">Title</label>
+			{{> afFieldInput name="title"}}
+		</div>
+
+		<div class="form-group sub-title">
+			<label for="sub-title">SubTitle</label>
+			{{> afFieldInput name="sub-title"}}
+		</div>
+
+		<div class="form-group author">
+			<label for="author">Author</label>
+			{{> afFieldInput name="author"}}
+		</div>
+
+		<div class="form-group series">
+			<label for="series">Series</label>
+			{{> afFieldInput name="series"}}
+		</div>
+
+		<div class="form-group o_pub">
+			<label for="o_pub">Original Publication</label>
+			{{> afFieldInput name="o_pub"}}
+		</div>
+
+		<div class="form-group o_pubDate">
+			<label for="o_pubDate">Original Publication Date</label>
+			{{> afFieldInput name="o_pubDate"}}
+		</div>
+
+		<div class="form-group subgenre">
+			<label for="subgenre">Subgenre</label>
+			{{> afFieldInput name="subgenre"}}
+		</div>
+
+<!-- 		<div class="form-group illustrations">
+			<label for="illustrations">Illustrations</label>
+			{{> afFieldInput name="illustrations.full"}}
+			{{> afFieldInput name="spot"}}
+			{{> afFieldInput name="caption"}}
+		</div> -->
+
+		<div class="form-group pdStatus">
+			<label for="pdStatus">Public Domain Status</label>
+			{{> afFieldInput name="pdStatus" options="allowed"}}
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="form-group">
+  	  <button type="submit" class="btn btn-primary">Add Book</button>
+	  </div>
+
+	{{/autoForm}}
+</template>

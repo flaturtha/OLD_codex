@@ -31,3 +31,9 @@ Router.route('/books/:_id', {
   action: 'view',
   where: 'client'
 });
+
+Router.route('the_red_file', {
+  name: 'theRedFile',
+  controller: 'TheRedFileController',
+  where: 'client'
+});

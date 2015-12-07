@@ -31,3 +31,50 @@ body {
 .ital {
 	font-style: italic;
 }
+
+
+
+/* copied from Bootstrap's dl-horizontal code */
+.h-dl dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.h-dl dd {
+  margin-left: 180px;
+}
+.h-dl dd:before, .h-dl dd:after {
+	display: table;
+	content: " ";
+}
+.h-dl dd:after {
+	clear: both;
+}
+.v-dl {
+	border: 1px solid hotpink;
+	margin: 0 0 20px 0;
+}
+.v-dl dt {
+	border: 1px solid blue;
+	float: none;
+	clear: both;
+	width: 40px;
+}
+.v-dl dd {
+	border: 1px solid green;
+	line-height: 1.42857143;
+	margin-left: 0;
+}
+.v-dl dd:before, v-dl dd:after {
+	display: inline;
+}
+
+
+
+
+
+

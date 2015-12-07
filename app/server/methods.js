@@ -26,11 +26,23 @@ Meteor.methods({
  	},
  	'updateillustrations-spot':function(id, illustrations){
  		return Books.update({_id: id}, {$set: {"illustrations.spot": illustrations, upsert: true}});
- 	}, 	
+ 	},
+  'updateillustrations-caption':function(id, illustrations){
+    return Books.update({_id: id}, {$set: {"illustrations.caption": illustrations, upsert: true}});
+  },
   'updatekeywords':function(id, keywords){
   	return Books.update({_id: id}, {$set: {keywords: keywords, upsert: true}});
   },
   'updateexcerpt':function(id, excerpt){
   	return Books.update({_id: id}, {$set: {excerpt: excerpt, upsert: true}});
+  },
+  'updatepdStatus':function(id, pdStatus){
+    return Books.update({_id: id}, {$set: {pdStatus: pdStatus, upsert: true}});
+  },
+  'updatedevStatus':function(id, devStatus){
+    return Books.update({_id: id}, {$set: {devStatus: devStatus, upsert: true}});
+  },
+  'updatetrf':function(id, trf){
+    return Books.update({_id: id}, {$set: {trf: trf, upsert: true}});
   }
 });

@@ -20,7 +20,6 @@ iron:router
 aldeed:autoform
 aldeed:collection2
 twbs:bootstrap
-natestrauser:font-awesome
 momentjs:moment
 aldeed:tabular
 accounts-password
@@ -28,4 +27,6 @@ accounts-ui
 useraccounts:bootstrap
 aslagle:reactive-table
 fortawesome:fontawesome
-meteortoys:allthings
+harrison:papa-parse
+themeteorchef:bert
+reactive-var

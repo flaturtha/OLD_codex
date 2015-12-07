@@ -13,7 +13,7 @@
 			<br>
 			<hr class="divider">
 			<div class="row">
-				{{> DevStatus}}
+				{{> devStatus}}
 			</div>
 
 		</div>
@@ -30,108 +30,147 @@
 				<h3 class="panel-title"><i class="fa fa-info-circle"></i> Basic Meta</h3>
 		  </div>
 		  <div class="panel-body">
-				<dl class="dl-horizontal">
+		  	<div class=""> <!-- col-md-6 -->
+		  		<dl class="dl-horizontal"> <!-- h-dl -->
 
-					<dt>Original Pub</dt>
-					<dd class="editing_Input editing_opub">
-						{{#if editingInput}}
-							<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
-						{{else}}
-							{{o_pub}}
-						{{/if}}
-					</dd>
-
-					<dt>Original Pub Date</dt>
-					<dd class="editing_Input editing_opubdate">
-						{{#if editingInput}}
-							<input type="text" class="input_opubdate o_pubdate" id="o_pubDate" placeholder="{{o_pubDate}}" value="{{o_pubDate}}">
-						{{else}}
-							{{o_pubDate}}
-						{{/if}}
-					</dd>
-
-					<dt>Subgenre</dt>
-					<dd class="editing_Input editing_subgenre">
-						{{#if editingInput}}
-							<input type="text" class="input_subgenre subgenre" id="subgenre" placeholder="{{subgenre}}" value="{{subgenre}}">
-						{{else}}
-							{{subgenre}}
-						{{/if}}
-					</dd>
-
-					<dt>Word Count</dt>
-					<dd class="editing_Input editing_wordCount">
-						{{#if editingInput}}
-							<input type="text" class="input_wordCount wordCount" id="wordCount" placeholder="{{wordCount}}" value="{{wordCount}}">
-						{{else}}
-							{{wordCount}}
-						{{/if}}
-					</dd>
-
-					<dt>Category</dt>
-					<dd class="editing_Input editing_category">
-						{{#if editingInput}}
-							<input type="text" class="input_category category" id="category" placeholder="{{category}}" value="{{category}}">
-						{{else}}
-							{{category}}
-						{{/if}}
-					</dd>
-					<br>
-					<dt>Illustrations:</dt>
-					<dd>&nbsp;
-						<dl>
-							<dt>Full</dt>
-							<dd class="editing_Input editing_illustrations-full">
-								{{#if editingInput}}
-									<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
-								{{else}}
-									{{illustrations.full}}
-								{{/if}}
-							</dd>
-
-							<dt>Spot</dt>
-							<dd class="editing_Input editing_illustrations-spot">
-								{{#if editingInput}}
-									<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
-								{{else}}
-									{{illustrations.spot}}
-								{{/if}}
-							</dd>
-						
-							<dt>Caption</dt>
-							<dd class="editing_Input editing_caption">
+						<dt>Original Pub</dt>
+						<dd class="editing_Input editing_opub">
 							{{#if editingInput}}
-								<input type="textarea" class="input_caption caption" id="caption" placeholder="{{illustrations.caption}}" value="{{illustrations.caption}}">
+								<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
 							{{else}}
-								{{illustrations.caption}}
+								{{o_pub}}
 							{{/if}}
-							</dd>
-						</dl>
-					</dd>
+						</dd>
 
-					<dt>Keywords</dt>
-					<dd class="editing_Input editing_keywords">
-						{{#if editingInput}}
-							<input type="text" class="input_keywords keywords" id="keywords" placeholder="{{keywords}}" value="{{keywords}}">
-						{{else}}
-							{{keywords}}
-						{{/if}}
-					</dd>
+						<dt>Original Pub Date</dt>
+						<dd class="editing_Input editing_opubdate">
+							{{#if editingInput}}
+								<input type="text" class="input_opubdate o_pubdate" id="o_pubDate" placeholder="{{o_pubDate}}" value="{{o_pubDate}}">
+							{{else}}
+								{{o_pubDate}}
+							{{/if}}
+						</dd>
 
-					<dt>Excerpt</dt>
-					<dd class="editing_Input editing_excerpt">
-						{{#if editingInput}}
-							<input type="textarea" class="input_excerpt excerpt" id="excerpt" placeholder="{{excerpt}}" value="{{excerpt}}">
-						{{else}}
-							{{excerpt}}
-						{{/if}}
-					</dd>
+						<dt>Subgenre</dt>
+						<dd class="editing_Input editing_subgenre">
+							{{#if editingInput}}
+								<input type="text" class="input_subgenre subgenre" id="subgenre" placeholder="{{subgenre}}" value="{{subgenre}}">
+							{{else}}
+								{{subgenre}}
+							{{/if}}
+						</dd>
 
-					<dt>PD Status</dt>
-					<dd>{{pdStatus}}</dd>
+						<dt>Keywords</dt>
+						<dd class="editing_Input editing_keywords">
+							{{#if editingInput}}
+								<input type="text" class="input_keywords keywords" id="keywords" placeholder="{{keywords}}" value="{{keywords}}">
+							{{else}}
+								{{keywords}}
+							{{/if}}
+						</dd>
 
-				</dl>
-		  </div>
+						<br>					
+
+						<dt>Word Count</dt>
+						<dd class="editing_Input editing_wordCount">
+							{{#if editingInput}}
+								<input type="text" class="input_wordCount wordCount" id="wordCount" placeholder="{{wordCount}}" value="{{wordCount}}">
+							{{else}}
+								{{wordCount}}
+							{{/if}}
+						</dd>
+
+						<dt>Category</dt>
+						<dd class="editing_Input editing_category">
+							{{#if editingInput}}
+								<input type="text" class="input_category category" id="category" placeholder="{{category}}" value="{{category}}">
+							{{else}}
+								{{category}}
+							{{/if}}
+						</dd>
+
+						<br>
+
+						<dt>Illustrations:</dt>
+						<dd>&nbsp;
+							<dl> <!-- class="v-dl" -->
+								<dt>Full</dt>
+								<dd class="editing_Input editing_illustrations-full">
+									{{#if editingInput}}
+										<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
+									{{else}}
+										{{illustrations.full}}
+									{{/if}}
+								</dd>
+
+								<dt>Spot</dt>
+								<dd class="editing_Input editing_illustrations-spot">
+									{{#if editingInput}}
+										<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+									{{else}}
+										{{illustrations.spot}}
+									{{/if}}
+								</dd>
+							
+								<dt>Caption</dt> <!-- add ability to list each illustration (full at least) and link to the file; also add more captions, e.g., for when there are 2 or more full illustrations -->
+								<dd class="editing_Input editing_caption">
+								{{#if editingInput}}
+									<textarea class="input_caption caption" id="caption" cols="30" rows="2" placeholder="{{illustrations.caption}}" value="{{illustrations.caption}}"></textarea>
+								{{else}}
+									{{#if excerpt }}
+										<p class="caption_text">{{illustrations.caption}}</p>
+									{{else}}
+										<p class="enterta">Enter caption</p>
+									{{/if}}
+								{{/if}}
+								</dd>
+							</dl>
+						</dd>
+
+	<!-- 					<dt>Excerpt</dt>
+						<dd class="editing_Input editing_excerpt">
+							{{#if editingInput}}
+								<input type="textarea" class="input_excerpt excerpt" id="excerpt" placeholder="{{excerpt}}" value="{{excerpt}}">
+							{{else}}
+								{{excerpt}}
+							{{/if}}
+						</dd> -->
+
+						<dt>PD Status</dt>
+						<dd class="editing_Input editing_pdStatus">
+							{{#if editingInput}}
+								<input type="text" class="input_pdStatus pdStatus" id="pdStatus" value="{{pdStatus}}">
+							{{else}}
+								{{pdStatus}}
+							{{/if}}
+						</dd>
+
+						<dt>Dev Status</dt>
+						<dd class="editing_Input editing_devStatus">
+							{{#if editingInput}}
+								<input type="text" class="input_devStatus devStatus" id="devStatus" value="{{devStatus}}">
+							{{else}}
+								{{devStatus}}
+							{{/if}}
+						</dd>
+
+						<dt>The Red File</dt>
+						<dd class="editing_Input editing_trf">
+							{{#if editingInput}}
+								<input type="text" class="input_trf trf" id="trf" value="{{trf}}">
+							{{else}}
+								{{trf}}
+							{{/if}}
+						</dd>
+
+					</dl>
+		  	</div>
+
+
+				
+				<!-- {{> statuses}} -->  <!-- col-md-6 -->
+				
+			</div>
 		</div>
 	</div>
 
@@ -140,9 +179,26 @@
 <template name="bvHead">
 	<div class="row bookviewtitle">
 		<div class="col-md-6">
-			<!-- <h3 class="title" style="margin-top:0;">{{title}}</h3> -->
-			<h4 style="margin-top:0;"><span class="text-muted">by</span> <span class="author">{{author}}</span></h4>
+			{{#if subTitle}}
+				<h3 class="headerTitle" style="margin-top:0;">{{subTitle}}</h3>
+			{{/if}}
+			{{#if author}}
+				<h4 style="margin-top:0;"><span class="text-muted">by</span> <span class="author">{{author}}</span></h4>
+			{{else}}
+				<h4 style="margin-top:0;"><span class="author">{{series}}</span></h4>
+			{{/if}}
 			<p class="cfn">Casefile Number: {{_id}}</p>
+			<p class="editing_Input editing_excerpt">
+				{{#if editingInput}}
+					<textarea class="input_excerpt excerpt" id="excerpt" cols="60" rows="3" placeholder="{{excerpt}}" value="{{excerpt}}"></textarea>
+				{{else}}
+					{{#if excerpt }}
+						<p class="bvHead__excerpt">{{excerpt}}</p>
+					{{else}}
+						<p class="enterta">Enter excerpt</p>
+					{{/if}}
+				{{/if}}
+			</p>			
 		</div> <!-- end div col-md-6 -->
 		<div class="col-md-6 text-muted bd_dates">
 			<dl class="dl-horizontal">
@@ -156,4 +212,79 @@
 		</div> <!-- end div col-md-6 -->
 	</div> <!-- end div .row .bookviewtitle -->
 </template>
+
+
+<template name="statuses">
+<div class="col-md-6">
+	<div class="panel panel-default outputStats pull-right">{{> outputStats}}</div>
+	<div class="panel panel-default pubStats pull-right">{{> pubStats}}</div>
+</div>
+</template>
+
+<template name="pubStats">
+	<h4>Publication Stats</h4>
+	<dl class="dl-horizontal">
+		<dt>Site</dt>
+		<dd>
+			<input type="checkbox" class="toggle-checkbox" {{checked}}>
+		</dd>
+
+		<dt>S3</dt>
+		<dd>
+			<input type="checkbox">
+		</dd>
+
+		<dt>THE RED FILE</dt>
+		<dd>
+			<input type="checkbox">
+		</dd>
+
+		<dt>TMP Store</dt>
+		<dd>
+			<input type="checkbox">
+		</dd>
+
+		<dt>External Store</dt>
+		<dd>
+			<input type="checkbox">
+		</dd>
+	</dl>
+</template>
+
+<template name="outputStats">
+	<h4>Output Stats</h4>
+	<dl class="dl-horizontal">
+		<dt>ePub</dt>
+		<dd><i class="fa fa-check-square-o"></i></dd>
+
+		<dt>.mobi</dt>
+		<dd><i class="fa fa-minus-square-o"></i></dd>
+
+		<dt>HTML</dt>
+		<dd><i class="fa fa-circle"></i></dd>
+
+		<dt>.markdown</dt>
+		<dd><i class="fa fa-square-o"></i></dd>
+	</dl>	
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

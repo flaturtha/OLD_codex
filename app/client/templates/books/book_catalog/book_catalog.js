@@ -35,9 +35,6 @@ Template.BookCatalog.helpers({
 	books: function(){
 		return Books.find();
 	},
-	booksCollection: function(){
-		return Books
-	},
 	tableSettings: function(){
 		return {
 			rowsPerPage: 10,
@@ -45,9 +42,10 @@ Template.BookCatalog.helpers({
 			showColumnToggles: true,
 			useFontAwesome: true,
 			multiColumnSort: true,
+			showRowCount: true,
 			fields: [
 				{key: 'view', label: 'Edit', tmpl: Template.bookDetailClicker, sortable: false, headerClass:'tableHeader'},
-				{key: 'title', label: 'Title', headerClass:'tableHeader'},
+				{key: 'title', label: 'Title', headerClass:'tableHeader', cellClass: 'bookTitle'},
 				{key: 'author', label: 'Author', headerClass:'tableHeader'}, /* combine author/series into single col; if statement to show only the one available */
 				// {key: 'series', label: 'Series', headerClass:'tableHeader'},
 				{key: 'subgenre', label: 'Subgenre', headerClass:'tableHeader'},
@@ -57,7 +55,8 @@ Template.BookCatalog.helpers({
 				{key: 'o_pub', label: 'Original Pub', headerClass:'tableHeader'},
 				{key: 'o_pubDate', label: 'Orig Pub Date', headerClass:'tableHeader'},
 				{key: 'pdStatus', label: 'PD Status', headerClass:'tableHeader'/*, fn: checkOrX*/},
-				{key: 'devStatus', label: 'Dev Status', headerClass:'tableHeader'}
+				// {key: 'devStatus', label: 'Dev Status', headerClass:'tableHeader'}, /* deleted until tracking system works! */
+				{key: 'trf', label: 'TRF', headerClass:'tableHeader'}
 				// {key: 'pubStatus', label: 'Pub Status', headerClass:'tableHeader'},
 			]
 		};

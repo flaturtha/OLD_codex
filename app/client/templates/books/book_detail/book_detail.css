@@ -65,11 +65,60 @@ dd > dl > dd {
 	text-transform: capitalize;
 }
 
+.caption_text {
+	text-transform: none; /* keeps the sentence case */
+	max-width: 225px;
+}
 
+.bvHead__excerpt {
+	margin-left: 20px;
+	font-style: italic;
+	font-size: 12px;
+}
 
+.enterta {
+	margin-left: 20px;
+	padding: 10px;
+	font-style: italic;
+	font-size: 12px;
+	background-color: #999;
+	color: #fff;
+}
 
+.pubStats, .outputStats {
+	max-width: 300px;
+	padding: 5px;
+}
 
+.pubStats > h4, .outputStats > h4 {
+	text-align: center;
+	background-color: #aaa;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-size: 13px;
+}
 
+.pubStats i, .outputStats i {
+	color: #999;
+}
+
+.pubStats .fa-check-square-o, .outputStats .fa-check-square-o {
+	color: green;
+}
+
+.pubStats .fa-minus-square-o, .outputStats .fa-minus-square-o {
+	color: #EC971F;
+}
+
+.pubStats .fa-circle, .outputStats .fa-circle {
+	color: red;
+}
+
+.pubStats .fa-times, .outputStats .fa-times {
+	color: red;
+}
 
 
 

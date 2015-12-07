@@ -1,0 +1,7 @@
+<template name="upload">
+	{{#unless uploading}}
+		<input type="file" name="uploadCSV">
+	{{else}}
+		<p><i class="fa fa-spin farefresh"></i> Uploading files&hellip;</p>
+	{{/unless}}
+</template>

@@ -24,3 +24,8 @@
 .cellCentered {
 	text-align: center;
 }
+
+.bookTitle {
+	font-weight: bold;
+	font-style: italic;
+}

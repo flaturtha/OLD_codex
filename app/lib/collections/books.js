@@ -1,14 +1,39 @@
 Books = new Mongo.Collection('books');
 
+pubStats = new SimpleSchema({
+  site: {
+    type: Boolean,
+    label: "Site"
+  },
+  s3: {
+    type: Boolean,
+    label: "AmazonS3"
+  },
+  theRedFile: {
+    type: Boolean,
+    label: "The Red File"
+  },
+  tmpStore: {
+    type: Boolean,
+    label: "TMP Store"
+  },
+  extStore: {
+    type: Boolean,
+    label: "External Store"
+  },
+});
+
 illustration = new SimpleSchema({
   full: {
     type: Number,
     label: "Full"
+    // link: url
   },
   spot: {
     type: Number,
     label: "Spot",
     defaultValue: 0
+    // link: url
   },
   caption: {
     type: String,
@@ -81,6 +106,8 @@ Books.attachSchema(new SimpleSchema({
   pdStatus: {
     type: String,
     label: "Public Domain Status",
+    optional: true,
+    // allowedValues: ['Public Domain', 'Copyrighted'],
     autoform: {
       type: "select-radio-inline",
       options: [
@@ -90,16 +117,21 @@ Books.attachSchema(new SimpleSchema({
     }
   },
   devStatus: {
-    type: String, /* tie this to devStatus collection*/
+    type: String,
     label: "Dev Status",
-    defaultValue: "raw",
-    optional: true
+    optional: true,
+    // allowedValues: ['Raw', 'Edit', 'Layout', 'Output', 'Flightcheck', 'Published']
   },
   pubStatus: {
-    type: String,
+    type: pubStats,
     label: "Publication Status",
-    optional: true,
-    defaultValue: "none"
+    optional: true
+    // defaultValue: "blue"
+  },
+  trf: {
+    type: String,
+    label: "The Red File",
+    defaultValue: "NA"
   },
   pubType: {
     type: String,

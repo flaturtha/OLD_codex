@@ -33,7 +33,48 @@
 		  	<div class=""> <!-- col-md-6 -->
 		  		<dl class="dl-horizontal"> <!-- h-dl -->
 
-						<dt>Original Pub</dt>
+						<dt>Source:</dt>
+							<dd>&nbsp;
+								<dl> <!-- class="v-dl" -->
+									<dt>Publication</dt>
+									<dd class="editing_Input editing_illustrations-full">
+										{{#if editingInput}}
+											<input type="text" class="input_illustrations-full illustrations-full" id="illustrations-full" placeholder="{{illustrations.full}}" value="{{illustrations.full}}">
+										{{else}}
+											{{illustrations.full}}
+										{{/if}}
+									</dd>
+
+									<dt>Date</dt>
+									<dd class="editing_Input editing_illustrations-spot">
+										{{#if editingInput}}
+											<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+										{{else}}
+											{{illustrations.spot}}
+										{{/if}}
+									</dd>
+								
+									<dt>Vol.:</dt>
+									<dd class="editing_Input editing_illustrations-spot">
+										{{#if editingInput}}
+											<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+										{{else}}
+											{{illustrations.spot}}
+										{{/if}}
+									</dd>
+
+									<dt>Num.:</dt>
+									<dd class="editing_Input editing_illustrations-spot">
+										{{#if editingInput}}
+											<input type="text" class="input_illustrations-spot illustrations-spot" id="illustrations-spot" placeholder="{{illustrations.spot}}" value="{{illustrations.spot}}">
+										{{else}}
+											{{illustrations.spot}}
+										{{/if}}
+									</dd>																		
+							</dl>
+						</dd>
+
+						<!-- <dt>Original Pub</dt>
 						<dd class="editing_Input editing_opub">
 							{{#if editingInput}}
 								<input type="text" class="input_opub o_pub" id="o_pub" placeholder="{{o_pub}}" value="{{o_pub}}">
@@ -49,7 +90,7 @@
 							{{else}}
 								{{o_pubDate}}
 							{{/if}}
-						</dd>
+						</dd> -->
 
 						<dt>Subgenre</dt>
 						<dd class="editing_Input editing_subgenre">

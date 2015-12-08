@@ -61,6 +61,17 @@ Template.BookCatalog.helpers({
 			]
 		};
 	},
+	// tableCountSettings: function(){
+	// 	return {
+	// 		showFilter: false,
+	// 		showNavigation: never,
+	// 		rowsPerPage: 0,
+	// 		showRowCount: true,
+	// 		showNavigationRowsPerPage: false
+	// 	};
+	// },
+
+
 	filter1settings: function(){
 		return {
 			fields: [illustrations.full, illustrations.spot]

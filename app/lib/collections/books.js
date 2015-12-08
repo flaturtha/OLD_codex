@@ -1,5 +1,28 @@
 Books = new Mongo.Collection('books');
 
+o_publication = new SimpleSchema({
+  o_pub: {
+    type: String,
+    label: "Publication",
+    optional: true
+  },
+  o_pubDate: {
+    type: String, /* or Date?? */
+    label: "Date",
+    optional: true
+  },
+  vol: {
+    type: String,
+    label: "Vol.",
+    optional: true
+  },
+  num: {
+    type: String,
+    label: "No.",
+    optional: true
+  }
+});
+
 pubStats = new SimpleSchema({
   site: {
     type: Boolean,
@@ -26,17 +49,19 @@ pubStats = new SimpleSchema({
 illustration = new SimpleSchema({
   full: {
     type: Number,
-    label: "Full"
+    label: "Full",
+    optional: true
     // link: url
   },
   spot: {
     type: Number,
     label: "Spot",
-    defaultValue: 0
+    defaultValue: 0,
+    optional: true
     // link: url
   },
   caption: {
-    type: String,
+    type: [String],
     label: "Caption",
     optional: true
   }
@@ -63,15 +88,15 @@ Books.attachSchema(new SimpleSchema({
     optional: true
   },
   o_pub: {
-    type: String,
+    type: o_publication,
     label: "Original Publication",
     optional: true
   },
-  o_pubDate: {
-    type: String,
-    label: "Original Publication Date",
-    optional: true
-  },
+  // o_pubDate: {
+  //   type: String,
+  //   label: "Original Publication Date",
+  //   optional: true
+  // },
   subgenre: {
     type: String,
     label: "Subgenre",

@@ -61,6 +61,10 @@ dd > dl {
 	margin-left: -175px;
 }
 
+dd > dl > dt {
+	text-transform: capitalize;
+}
+
 dd > dl > dd {
 	text-transform: capitalize;
 }

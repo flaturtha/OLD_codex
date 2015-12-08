@@ -1,6 +1,6 @@
 <template name="BookCatalog">
   <div class="book-catalog container">
-    <h1 class="viewHeader h3"><i class="fa fa-book"></i> BookCatalog</h1>
+    <h1 class="viewHeader h3"><i class="fa fa-book"></i> BookCatalog | <small>{{getPublishedCount 'books'}} titles currently listed</small></h1>
     <hr>
     <div class="col-md-12">
       {{> reactiveTable collection=books settings=tableSettings}}
@@ -24,4 +24,9 @@
 
 <template name="bookDetailClicker">
   {{#linkTo route='bookDetail'}}<i style="color:#808080;" class="fa fa-eye-slash centeri" aria-hidden="true"></i>{{/linkTo}}
+</template>
+
+<template name="countCollection">
+  <!-- {{> reactiveTable collection=books settings=tableCountSettings}} -->
+
 </template>
